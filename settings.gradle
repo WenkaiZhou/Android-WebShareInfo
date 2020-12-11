@@ -1,0 +1,3 @@
+include ':webshareinfo'
+include ':app'
+rootProject.name = "Android-WebShareInfo"
