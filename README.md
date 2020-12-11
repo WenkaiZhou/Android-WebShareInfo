@@ -53,7 +53,7 @@ webView.evaluateJavascript(
 
 哈哈，正确输出了title，第一版，完成了。
 
-在代码里看到这么一堆代码还是挺🤮的，就简单封装下把。
+在代码里看到这么一堆代码还是挺🤮的，而且我们需要的信息不只有 `title` 还有 `url` `image` `description` `site_name` `type` 这些信息，就简单封装下吧。
 
 ## 引入
 
@@ -64,8 +64,13 @@ implementation 'com.kevin:webshareinfo:1.0.0'
 ## 使用
 
 ```kotlin
-webView.getShareInfo { shareInfo ->
-    Log.e("shareInfo", "title = ${shareInfo.title}")
+webView.getShareInfo { info ->
+    Log.d("shareInfo", "title = ${info.title}")
+    Log.d("shareInfo", "url = ${info.url}")
+    Log.d("shareInfo", "image = ${info.image}")
+    Log.d("shareInfo", "description = ${info.description}")
+    Log.d("shareInfo", "siteName = ${info.siteName}")
+    Log.d("shareInfo", "type = ${info.type}")
 }
 ```
 
@@ -81,7 +86,7 @@ webView.getShareInfo { shareInfo ->
 ## License
 
 ```text
-Copyright (c) 2019 Kevin zhou
+Copyright (c) 2020 Kevin zhou
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
