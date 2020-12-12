@@ -5,7 +5,7 @@
 
 <img src="https://raw.githubusercontent.com/xuehuayous/Android-WebShareInfo/master/app/pic/1607677503515.jpg" width="300" />
 
-同样是两片H5文章，在样式显示上为啥区别那么大呢？明显亲生的公众号文章更好看一些？它们肯定是在H5上有差异的，带着这个疑问，打开了第一篇文章的源码。果然，这一段看着比较可疑。
+同样是H5文章，在微信的IM中样式显示上为啥区别那么大呢？明显亲生的公众号文章更好看一些，它们肯定是在H5上有差异的，带着这个疑问，打开了第一篇文章的源码。果然，这一段看着比较可疑。
 
 ```html
 <meta property="og:title" content="男朋友胸大，对女生有什么好处？" />
@@ -23,7 +23,7 @@
 
 ## Android如何获取内容值
 
-哪怎么获取对应的内容呢？又是一把搜索。看到有人提议使用Jsoup解析，Jsoup我比较熟悉，在用Java爬网站的时候用过，是一把解析Html的好手，但...用来干这个，未免大材小用了。
+那怎么获取对应的内容呢？又是一把搜索。看到有人提议使用Jsoup解析，Jsoup我比较熟悉，在用Java爬网站的时候用过，是一把解析Html的好手，但...用来干这个，未免大材小用了。
 
 那是不是可以Native调用H5方法呢？
 
@@ -58,7 +58,7 @@ webView.evaluateJavascript(
 ## 引入
 
 ```groovy
-implementation 'com.kevin:webshareinfo:1.0.0'
+implementation 'com.kevin:webshareinfo:1.1.0'
 ```
 
 ## 使用
