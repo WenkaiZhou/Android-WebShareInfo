@@ -1,7 +1,7 @@
 package com.kevin.webshareinfo
 
-import android.util.Log
 import android.webkit.WebView
+import org.json.JSONException
 import org.json.JSONObject
 
 /**
@@ -45,24 +45,28 @@ fun WebView.getShareInfo(callback: (shareInfo: WebShareInfo) -> Unit) {
         """.trimIndent()
     ) { params ->
         val shareInfo = WebShareInfo()
-        val ogJsonObject = JSONObject(params)
-        if (!ogJsonObject.isNull("title")) {
-            shareInfo.title = ogJsonObject.getString("title")
-        }
-        if (!ogJsonObject.isNull("url")) {
-            shareInfo.url = ogJsonObject.getString("url")
-        }
-        if (!ogJsonObject.isNull("image")) {
-            shareInfo.image = ogJsonObject.getString("image")
-        }
-        if (!ogJsonObject.isNull("description")) {
-            shareInfo.description = ogJsonObject.getString("description")
-        }
-        if (!ogJsonObject.isNull("site_name")) {
-            shareInfo.siteName = ogJsonObject.getString("site_name")
-        }
-        if (!ogJsonObject.isNull("type")) {
-            shareInfo.type = ogJsonObject.getString("type")
+        try {
+            val ogJsonObject = JSONObject(params)
+            if (!ogJsonObject.isNull("title")) {
+                shareInfo.title = ogJsonObject.getString("title")
+            }
+            if (!ogJsonObject.isNull("url")) {
+                shareInfo.url = ogJsonObject.getString("url")
+            }
+            if (!ogJsonObject.isNull("image")) {
+                shareInfo.image = ogJsonObject.getString("image")
+            }
+            if (!ogJsonObject.isNull("description")) {
+                shareInfo.description = ogJsonObject.getString("description")
+            }
+            if (!ogJsonObject.isNull("site_name")) {
+                shareInfo.siteName = ogJsonObject.getString("site_name")
+            }
+            if (!ogJsonObject.isNull("type")) {
+                shareInfo.type = ogJsonObject.getString("type")
+            }
+        } catch (e: JSONException) {
+            e.printStackTrace()
         }
         callback(shareInfo)
     }
