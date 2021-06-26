@@ -58,7 +58,7 @@ webView.evaluateJavascript(
 ## 引入
 
 ```groovy
-implementation 'com.kevin:webshareinfo:1.1.0'
+implementation 'com.zwenkai:webshareinfo:1.1.0'
 ```
 
 ## 使用
